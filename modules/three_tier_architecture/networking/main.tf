@@ -21,6 +21,7 @@ resource "aws_route_table" "public" {
   }
 }
 
+# All traffic is routed to the IG:
 resource "aws_route" "igw_route" {
   route_table_id         = aws_route_table.public.id
   gateway_id             = aws_internet_gateway.module_ig.id
