@@ -43,7 +43,6 @@ module "ec2s_bastion" {
 
 resource "aws_eip" "module" {
   for_each = module.ec2s_bastion
-  vpc      = true
   instance = each.value.instance.id
 
   tags = {
